@@ -1,20 +1,27 @@
-# Resume Builder DevOps Project
+# Smart Resume Builder
 
 ## Technologies Used
+- HTML
+- CSS
+- JavaScript
 - Java
 - Docker
-- Jenkins
 - GitHub
 
 ## Features
-- Create Resume
-- Save Resume to Text File
-- CI/CD Ready
+- Resume generation
+- Interactive UI
+- Docker container support
+- DevOps workflow
 
-## Run Commands
+## Project Structure
+- index.html
+- style.css
+- script.js
+- ResumeBuilder.java
 
-Compile:
-javac src/ResumeBuilder.java
+## CI/CD Flow
+GitHub → Build → Docker Image → Container
 
-Run:
-java -cp src ResumeBuilder
+## Run Instructions
+Open index.html in browser
