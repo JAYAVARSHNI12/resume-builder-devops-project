@@ -10,7 +10,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'YOUR_GITHUB_REPOSITORY_LINK'
+                git 'https://github.com/JAYAVARSHNI12/resume-builder-devops-project.git'
             }
         }
         stage('Build Project') {
