@@ -1,9 +1,3 @@
-FROM eclipse-temurin:17
+FROM nginx:latest
 
-WORKDIR /app
-
-COPY target/ResumeBuilder-1.0.jar app.jar
-
-EXPOSE 2007
-
-ENTRYPOINT ["java","-jar","app.jar"]
+COPY . /usr/share/ngnix/html
