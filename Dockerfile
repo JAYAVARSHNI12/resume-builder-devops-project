@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY target/ResumeBuilder-1.0.jar app.jar
 
-CMD ["java", "-jar", "app.jar"]
+EXPOSE 2007
+
+ENTRYPOINT ["java","-jar","app.jar"]
