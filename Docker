@@ -2,7 +2,7 @@ FROM openjdk:17
 
 WORKDIR /app
 
-COPY target/ResumeBuilder.jar app.jar
+COPY target/ResumeBuilder-1.0.jar
 
 EXPOSE 2006
 
