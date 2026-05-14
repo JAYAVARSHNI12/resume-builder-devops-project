@@ -1,9 +1,0 @@
-FROM openjdk:17
-
-WORKDIR /app
-
-COPY target/ResumeBuilder-1.0.jar app.jar
-
-EXPOSE 2006
-
-CMD ["java", "-jar", "app.jar"]
