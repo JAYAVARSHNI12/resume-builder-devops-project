@@ -2,17 +2,18 @@ pipeline {
     agent any
 
     tools {
-        maven 'mvn'
+        maven 'Maven'
         jdk 'JDK21'
     }
 
     stages {
 
         stage('Clone Repository') {
-            steps {
-                git 'https://github.com/JAYAVARSHNI12/resume-builder-devops-project.git'
-            }
-        }
+          steps {
+             git branch: 'main',
+               url: 'https://github.com/JAYAVARSHNI12/resume-builder-devops-project.git'
+    }
+       }
         stage('Build Project') {
             steps {
                 bat 'mvn clean package'
