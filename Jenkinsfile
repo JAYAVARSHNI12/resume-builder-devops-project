@@ -34,7 +34,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker run -d -p 8080:8080 --name resume-container resume-builder-app'
+                bat 'docker run -d -p 2007:2006 --name resume-container resume-builder-app'
             }
         }
     }
