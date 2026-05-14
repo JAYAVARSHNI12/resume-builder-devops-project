@@ -1,9 +1,7 @@
-FROM openjdk:21
+FROM eclipse-temurin:17
 
 WORKDIR /app
 
 COPY target/ResumeBuilder.jar app.jar
-
-EXPOSE 2006
 
 CMD ["java", "-jar", "app.jar"]
