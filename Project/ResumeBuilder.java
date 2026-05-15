@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ResumeBuilder {
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         String name;
@@ -16,6 +17,7 @@ public class ResumeBuilder {
         String projects;
 
         if (args.length >= 6) {
+
             name = args[0];
             email = args[1];
             phone = args[2];
@@ -23,7 +25,9 @@ public class ResumeBuilder {
             skills = args[4];
             education = args[5];
             projects = args.length > 6 ? args[6] : "";
+
         } else {
+
             System.out.println("============================");
             System.out.println(" SMART RESUME BUILDER ");
             System.out.println("============================");
@@ -50,7 +54,8 @@ public class ResumeBuilder {
             projects = sc.nextLine();
         }
 
-        String resumeText = "\n==============================\n" +
+        String resumeText =
+                "\n==============================\n" +
                 "         RESUME\n" +
                 "==============================\n\n" +
                 "Name       : " + name + "\n" +
@@ -67,45 +72,94 @@ public class ResumeBuilder {
                 "------------------------------\n" +
                 projects + "\n";
 
-        String resumeHtml = "<!DOCTYPE html>\n" +
+        String resumeHtml =
+                "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
-                "    <title>Resume</title>\n" +
-                "    <style>body{font-family:Arial, sans-serif;background:#eef2f7;padding:20px;} .resume-card{max-width:760px;margin:auto;background:#fff;padding:26px;border-radius:14px;box-shadow:0 16px 35px rgba(0,0,0,0.08);} h1{margin-top:0;font-size:28px;color:#1e3560;} h2{margin:12px 0 6px;color:#223042;} p{margin:8px 0;color:#4c5d75;} h3{margin-top:24px;color:#0c2b55;} .section-content{white-space:pre-wrap;line-height:1.75;}</style>\n" +
+                "    <title>Resume Builder</title>\n" +
+                "    <style>\n" +
+                "        body {\n" +
+                "            font-family: Arial, sans-serif;\n" +
+                "            background-color: #f0f2f5;\n" +
+                "            padding: 30px;\n" +
+                "        }\n" +
+                "\n" +
+                "        .container {\n" +
+                "            width: 700px;\n" +
+                "            margin: auto;\n" +
+                "            background: white;\n" +
+                "            padding: 25px;\n" +
+                "            border-radius: 10px;\n" +
+                "            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);\n" +
+                "        }\n" +
+                "\n" +
+                "        h1 {\n" +
+                "            text-align: center;\n" +
+                "            color: darkblue;\n" +
+                "        }\n" +
+                "\n" +
+                "        h2 {\n" +
+                "            margin-top: 20px;\n" +
+                "            color: #333;\n" +
+                "        }\n" +
+                "\n" +
+                "        p {\n" +
+                "            line-height: 1.8;\n" +
+                "        }\n" +
+                "    </style>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "<div class=\"resume-card\">\n" +
-                "    <h1>Resume</h1>\n" +
-                "    <h2>" + name + "</h2>\n" +
+                "\n" +
+                "<div class=\"container\">\n" +
+                "\n" +
+                "    <h1>SMART RESUME</h1>\n" +
+                "\n" +
+                "    <h2>Personal Details</h2>\n" +
+                "    <p><strong>Name:</strong> " + name + "</p>\n" +
                 "    <p><strong>Email:</strong> " + email + "</p>\n" +
                 "    <p><strong>Phone:</strong> " + phone + "</p>\n" +
                 "    <p><strong>Address:</strong> " + address + "</p>\n" +
-                "    <div class=\"section-content\">\n" +
-                "        <h3>Skills</h3>\n" +
-                "        <p>" + skills + "</p>\n" +
-                "        <h3>Education</h3>\n" +
-                "        <p>" + education + "</p>\n" +
-                "        <h3>Projects</h3>\n" +
-                "        <p>" + projects + "</p>\n" +
-                "    </div>\n" +
+                "\n" +
+                "    <h2>Skills</h2>\n" +
+                "    <p>" + skills + "</p>\n" +
+                "\n" +
+                "    <h2>Education</h2>\n" +
+                "    <p>" + education + "</p>\n" +
+                "\n" +
+                "    <h2>Projects</h2>\n" +
+                "    <p>" + projects + "</p>\n" +
+                "\n" +
                 "</div>\n" +
+                "\n" +
                 "</body>\n" +
                 "</html>";
 
-        try (FileWriter writer = new FileWriter("resume.html")) {
+        try {
+
+            FileWriter writer = new FileWriter("index.html");
             writer.write(resumeHtml);
-            System.out.println("Resume saved successfully as resume.html");
+            writer.close();
+
+            System.out.println("Resume saved successfully as index.html");
+
         } catch (IOException e) {
-            System.out.println("Error while saving resume.html: " + e.getMessage());
+
+            System.out.println("Error while saving index.html");
         }
 
-        try (FileWriter writer = new FileWriter("Resume.txt")) {
+        try {
+
+            FileWriter writer = new FileWriter("Resume.txt");
             writer.write(resumeText);
+            writer.close();
+
             System.out.println("Resume saved successfully as Resume.txt");
+
         } catch (IOException e) {
-            System.out.println("Error while saving Resume.txt: " + e.getMessage());
+
+            System.out.println("Error while saving Resume.txt");
         }
 
         sc.close();
