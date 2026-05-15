@@ -1,9 +1,3 @@
-FROM eclipse-temurin:21
+FROM nginx:latest
 
-WORKDIR /app
-
-COPY target/*.jar app.jar
-
-EXPOSE 2024
-
-ENTRYPOINT ["java","-jar","app.jar"]
+COPY . /usr/share/nginx/html
