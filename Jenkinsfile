@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
 
     agent any
 
@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Build Application') {
+        stage('Build Java Project') {
 
             steps {
 
@@ -28,7 +28,7 @@ pipeline {
             }
         }
 
-        stage('Verify Artifact') {
+        stage('Verify Jar File') {
 
             steps {
 
@@ -46,12 +46,20 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
+        stage('Remove Old Container') {
 
             steps {
 
                 bat 'docker rm -f resume-container || exit 0'
-                bat 'docker run -d -p 2024:2024 --name resume-container resume-builder-app'
+
+            }
+        }
+
+        stage('Run Docker Container') {
+
+            steps {
+
+                bat 'docker run -d -p 2020:80 --name resume-container resume-builder-app'
 
             }
         }
