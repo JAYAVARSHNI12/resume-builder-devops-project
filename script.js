@@ -14,6 +14,7 @@ function generateResume() {
     let experience = document.getElementById("experience").value;
     let projects = document.getElementById("projects").value;
     let languages = document.getElementById("languages").value;
+    let reference = document.getElementById("reference").value;
 
     // PREVIEW UPDATE
 
@@ -30,6 +31,7 @@ function generateResume() {
     document.getElementById("previewExperience").innerText = experience;
     document.getElementById("previewProjects").innerText = projects;
     document.getElementById("previewLanguages").innerText = languages;
+    document.getElementById("outReference").innerText = reference;
 }
 
 // PROFILE IMAGE UPLOAD
