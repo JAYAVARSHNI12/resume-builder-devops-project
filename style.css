@@ -141,3 +141,32 @@ button:hover {
         min-width: 100%;
     }
 }
+@media print {
+
+    .form-section,
+    button,
+    input,
+    textarea {
+        display: none;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        display: block;
+        padding: 0;
+    }
+
+    .resume-section {
+        width: 100%;
+    }
+
+    .resume-template {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
