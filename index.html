@@ -2,97 +2,180 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Smart Resume Builder</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <div class="form-section">
+        <!-- FORM SECTION -->
 
-        <h1>Smart Resume Builder</h1>
+        <div class="form-section">
 
-        <input type="text" id="name" placeholder="Full Name">
+            <h1>Smart Resume Builder</h1>
 
-        <input type="email" id="email" placeholder="Email">
+            <input type="file" id="imageInput">
 
-        <input type="text" id="phone" placeholder="Phone Number">
+            <input type="text" id="name" placeholder="Full Name">
 
-        <input type="text" id="address" placeholder="Location">
+            <input type="text" id="role" placeholder="Professional Role">
 
-        <textarea id="skills" placeholder="Skills"></textarea>
+            <input type="email" id="email" placeholder="Email">
 
-        <textarea id="education" placeholder="Education"></textarea>
+            <input type="text" id="phone" placeholder="Phone Number">
 
-        <textarea id="projects" placeholder="Projects"></textarea>
+            <input type="text" id="address" placeholder="Address">
 
-        <input type="text" id="summary" placeholder="Professional Summary">
+            <textarea id="summary" placeholder="Professional Summary"></textarea>
 
-        <input type="file" id="imageInput" accept="image/*">
+            <textarea id="skills" placeholder="Skills"></textarea>
 
-        <button onclick="generateResume()">Generate Resume</button>
+            <textarea id="education" placeholder="Education"></textarea>
 
-        <button onclick="window.print()">Download PDF</button>
+            <textarea id="experience" placeholder="Experience"></textarea>
 
-    </div>
+            <textarea id="projects" placeholder="Projects"></textarea>
 
-    <div class="resume-section">
+            <textarea id="languages" placeholder="Languages"></textarea>
 
-        <div class="resume-template" id="output">
+            <button onclick="generateResume()">
+                Generate Resume
+            </button>
 
-            <div class="left-column">
+            <button type="button" onclick="window.print()">
+                Download PDF
+            </button>
 
-                <img id="profileImage"
-                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-                    alt="Profile">
+        </div>
 
-                <h2 id="outName">Your Name</h2>
+        <!-- RESUME SECTION -->
 
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    <span id="outEmail">email@gmail.com</span>
-                </p>
+        <div class="resume-section">
 
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    <span id="outPhone">9876543210</span>
-                </p>
+            <div class="resume-template" id="resumeTemplate">
 
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span id="outAddress">Chennai</span>
-                </p>
+                <!-- LEFT SIDE -->
 
-            </div>
+                <div class="left-column">
 
-            <div class="right-column">
+                    <img id="profileImage"
+                        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                        alt="Profile Image">
 
-                <div class="resume-block">
-                    <h3><i class="fa-solid fa-user"></i> Summary</h3>
-                    <p id="outSummary"></p>
+                    <h2 id="previewName">Your Name</h2>
+
+                    <p id="previewRole">Professional Role</p>
+
+                    <hr>
+
+                    <div class="resume-block">
+
+                        <h3>Contact</h3>
+
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span id="previewEmail">yourmail@gmail.com</span>
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            <span id="previewPhone">9876543210</span>
+                        </p>
+
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span id="previewAddress">Your Address</span>
+                        </p>
+
+                    </div>
+
+                    <div class="resume-block">
+
+                        <h3>Education</h3>
+
+                        <p id="previewEducation">
+                            Your Education
+                        </p>
+
+                    </div>
+
+                    <div class="resume-block">
+
+                        <h3>Skills</h3>
+
+                        <p id="previewSkills">
+                            Your Skills
+                        </p>
+
+                    </div>
+
+                    <div class="resume-block">
+
+                        <h3>Languages</h3>
+
+                        <p id="previewLanguages">
+                            English
+                        </p>
+
+                    </div>
+
                 </div>
 
-                <div class="resume-block">
-                    <h3><i class="fa-solid fa-code"></i> Skills</h3>
-                    <p id="outSkills"></p>
-                </div>
+                <!-- RIGHT SIDE -->
 
-                <div class="resume-block">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-                    <p id="outEducation"></p>
-                </div>
+                <div class="right-column">
 
-                <div class="resume-block">
-                    <h3><i class="fa-solid fa-diagram-project"></i> Projects</h3>
-                    <p id="outProjects"></p>
+                    <div class="resume-block">
+
+                        <h3>Professional Summary</h3>
+
+                        <p id="previewSummary">
+                            Your professional summary appears here.
+                        </p>
+
+                    </div>
+
+                    <div class="resume-block">
+
+                        <h3>Experience</h3>
+
+                        <p id="previewExperience">
+                            Your experience appears here.
+                        </p>
+
+                    </div>
+
+                    <div class="resume-block">
+
+                        <h3>Projects</h3>
+
+                        <p id="previewProjects">
+                            Your projects appear here.
+                        </p>
+
+                    </div>
+
+                    <div class="resume-block">
+
+                        <h3>Reference</h3>
+
+                        <p>
+                            Available upon request
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -101,9 +184,8 @@
 
     </div>
 
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
