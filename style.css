@@ -1,144 +1,89 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #edf1f7;
-}
+@media print {
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 30px;
-    justify-content: center;
-}
-
-.form-section {
-    width: 350px;
-    background: #dcd6f7;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.form-section h1 {
-    text-align: center;
-    color: #243b55;
-    margin-bottom: 20px;
-}
-
-input,
-textarea {
-    width: 100%;
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 15px;
-}
-
-textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-
-button {
-    width: 100%;
-    margin-top: 15px;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: #3d5af1;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #2f49d1;
-}
-
-.resume-section {
-    flex: 1;
-    min-width: 650px;
-}
-
-.resume-template {
-    display: flex;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-.left-column {
-    width: 260px;
-    background: #243b55;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.left-column img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
-    margin-bottom: 18px;
-}
-
-.left-column h2 {
-    margin: 10px 0;
-    font-size: 24px;
-}
-
-.left-column p {
-    font-size: 14px;
-    margin: 10px 0;
-    text-align: left;
-    line-height: 1.5;
-}
-
-.left-column i {
-    margin-right: 10px;
-}
-
-.right-column {
-    flex: 1;
-    padding: 20px;
-    background: #f9fbff;
-}
-
-.resume-block {
-    margin-bottom: 18px;
-}
-
-.resume-block h3 {
-    color: #243b55;
-    margin-bottom: 8px;
-    border-bottom: 2px solid #d8e2f1;
-    padding-bottom: 6px;
-}
-
-.resume-block p {
-    color: #44556c;
-    line-height: 1.5;
-    white-space: pre-line;
-}
-
-@media(max-width: 900px) {
-
-    .resume-template {
-        flex-direction: column;
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        zoom: 82%;
     }
 
-    .left-column {
-        width: 100%;
+    .form-section {
+        display: none !important;
+    }
+
+    button,
+    input,
+    textarea {
+        display: none !important;
+    }
+
+    .container {
+        display: block;
+        padding: 0;
+        margin: 0;
     }
 
     .resume-section {
-        min-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .resume-template {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-shadow: none;
+        border-radius: 0;
+        overflow: hidden;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .left-column {
+        width: 30%;
+        background: #243b55 !important;
+        color: white !important;
+        padding: 16px;
+    }
+
+    .right-column {
+        width: 70%;
+        padding: 16px;
+        background: white !important;
+    }
+
+    .left-column img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .resume-block {
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+    }
+
+    .resume-block h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        color: #000 !important;
+    }
+
+    .resume-block p {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #000 !important;
+        margin: 0;
+    }
+
+    .left-column p,
+    .left-column h2 {
+        color: white !important;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
     }
 }
