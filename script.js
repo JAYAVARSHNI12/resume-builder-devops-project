@@ -1,3 +1,5 @@
+alert("NEW JS FILE LOADED");
+
 function generateResume() {
 
     let name = document.getElementById("name").value;
