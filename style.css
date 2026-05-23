@@ -70,9 +70,6 @@ button:hover {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
 }
 
 .left-column {
@@ -123,14 +120,12 @@ button:hover {
     margin-bottom: 8px;
     border-bottom: 2px solid #d8e2f1;
     padding-bottom: 6px;
-    font-size: 20px;
 }
 
 .resume-block p {
     color: #44556c;
     line-height: 1.5;
     white-space: pre-line;
-    margin: 4px 0;
 }
 
 @media(max-width: 900px) {
@@ -145,103 +140,5 @@ button:hover {
 
     .resume-section {
         min-width: 100%;
-    }
-}
-
-@media print {
-
-    body {
-        margin: 0;
-        padding: 0;
-        background: white;
-        zoom: 78%;
-        color: #000 !important;
-    }
-
-    .form-section,
-    button,
-    input,
-    textarea {
-        display: none;
-    }
-
-    .container {
-        display: block;
-        margin: 0;
-        padding: 0;
-    }
-
-    .resume-section {
-        width: 100%;
-    }
-
-    .resume-template {
-        display: flex;
-        width: 100%;
-        box-shadow: none;
-        border-radius: 0;
-        overflow: hidden;
-
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-
-    .left-column {
-        width: 30%;
-        background: #243b55 !important;
-        color: white !important;
-        padding: 14px;
-    }
-
-    .right-column {
-        width: 70%;
-        background: white !important;
-        padding: 14px;
-    }
-
-    .left-column img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .left-column h2 {
-        font-size: 18px;
-        margin: 8px 0;
-        color: white !important;
-    }
-
-    .left-column p {
-        font-size: 12px;
-        line-height: 1.3;
-        margin: 6px 0;
-        color: white !important;
-    }
-
-    .resume-block {
-        margin-bottom: 10px;
-        page-break-inside: avoid;
-    }
-
-    .resume-block h3 {
-        font-size: 15px;
-        margin-bottom: 4px;
-        color: #000 !important;
-    }
-
-    .resume-block p {
-        font-size: 12px;
-        line-height: 1.3;
-        margin: 0;
-        color: #000 !important;
-    }
-
-    * {
-        color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
-
-    @page {
-        size: A4;
-        margin: 0;
     }
 }
