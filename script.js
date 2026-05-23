@@ -1,9 +1,6 @@
 function generateResume() {
 
-    // INPUT VALUES
-
     let name = document.getElementById("name").value;
-    let role = document.getElementById("role").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
     let address = document.getElementById("address").value;
@@ -16,35 +13,35 @@ function generateResume() {
     let languages = document.getElementById("languages").value;
     let reference = document.getElementById("reference").value;
 
-    // PREVIEW UPDATE
+    // OUTPUTS
 
-    document.getElementById("previewName").innerText = name;
-    document.getElementById("previewRole").innerText = role;
+    document.getElementById("outName").innerText = name;
+    document.getElementById("outEmail").innerText = email;
+    document.getElementById("outPhone").innerText = phone;
+    document.getElementById("outAddress").innerText = address;
 
-    document.getElementById("previewEmail").innerText = email;
-    document.getElementById("previewPhone").innerText = phone;
-    document.getElementById("previewAddress").innerText = address;
-
-    document.getElementById("previewSummary").innerText = summary;
-    document.getElementById("previewSkills").innerText = skills;
-    document.getElementById("previewEducation").innerText = education;
-    document.getElementById("previewExperience").innerText = experience;
-    document.getElementById("previewProjects").innerText = projects;
-    document.getElementById("previewLanguages").innerText = languages;
+    document.getElementById("outSummary").innerText = summary;
+    document.getElementById("outSkills").innerText = skills;
+    document.getElementById("outEducation").innerText = education;
+    document.getElementById("outExperience").innerText = experience;
+    document.getElementById("outProjects").innerText = projects;
+    document.getElementById("outLanguages").innerText = languages;
     document.getElementById("outReference").innerText = reference;
+
+    // PROFILE IMAGE
+
+    let imageInput = document.getElementById("imageInput");
+
+    if (imageInput.files && imageInput.files[0]) {
+
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+
+            document.getElementById("profileImage").src = e.target.result;
+
+        };
+
+        reader.readAsDataURL(imageInput.files[0]);
+    }
 }
-
-// PROFILE IMAGE UPLOAD
-
-document.getElementById("imageInput").addEventListener("change", function(event) {
-
-    let reader = new FileReader();
-
-    reader.onload = function() {
-
-        document.getElementById("profileImage").src = reader.result;
-    };
-
-    reader.readAsDataURL(event.target.files[0]);
-
-});
