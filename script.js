@@ -1,5 +1,3 @@
-alert("NEW JS FILE LOADED");
-
 function generateResume() {
 
     let name = document.getElementById("name").value;
@@ -15,8 +13,6 @@ function generateResume() {
     let languages = document.getElementById("languages").value;
     let reference = document.getElementById("reference").value;
 
-    // OUTPUTS
-
     document.getElementById("outName").innerText = name;
     document.getElementById("outEmail").innerText = email;
     document.getElementById("outPhone").innerText = phone;
@@ -29,8 +25,6 @@ function generateResume() {
     document.getElementById("outProjects").innerText = projects;
     document.getElementById("outLanguages").innerText = languages;
     document.getElementById("outReference").innerText = reference;
-
-    // PROFILE IMAGE
 
     let imageInput = document.getElementById("imageInput");
 
